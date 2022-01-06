@@ -1,8 +1,8 @@
 // Write your JavaScript code here.
 // Remember to pay attention to page loading!
 function init() {
+    let shuttleHeight = document.getElementById("spaceShuttleHeight");
     document.getElementById("takeoff").addEventListener("click", function(event) {
-        let shuttleHeight = document.getElementById("spaceShuttleHeight");
         let response = window.confirm("Confirm that the shuttle is ready for takeoff.");
         if (response) {
         document.getElementById("flightStatus").innerHTML = "Shuttle in flight.";
@@ -14,14 +14,14 @@ function init() {
         window.alert("The shuttle is landing. Landing gear engaged.");
         document.getElementById("flightStatus").innerHTML = "The shuttle has landed.";
         document.getElementById("shuttleBackground").style.backgroundColor = "green";
-        document.getElementById("spaceShuttleHeight").innerHTML = 0;
+        shuttleHeight.innerHTML = 0;
     });
     document.getElementById("missionAbort").addEventListener("click", function(event){
         let response = window.confirm("Confirm that you want to abort the mission.");
         if (response) {
             document.getElementById("flightStatus").innerHTML = "Mission aborted.";
             document.getElementById("shuttleBackground").style.backgroundColor = "green";
-            document.getElementById("spaceShuttleHeight").innerHTML = 0;
+            shuttleHeight.innerHTML = 0;
         }
     });
     document.getElementById("up").addEventListener("click", function(event) {
